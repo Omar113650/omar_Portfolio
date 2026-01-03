@@ -138,7 +138,7 @@ const projects = [
     features: ['Doctor Management', 'Patient Management', 'Appointment System', 'Pharmacy Module', 'Lab Tests', 'RBAC', 'Secure Auth'],
     tech: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'REST APIs'],
     github: 'https://github.com/Omar113650/Hospital-management-system',
-    image: '/A.png',
+    image: '/public/A.png',
     align: 'right'
   },
 ]
