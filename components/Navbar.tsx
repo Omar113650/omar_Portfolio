@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 
 const NAV_ITEMS = [
@@ -51,7 +50,7 @@ export default function Navbar() {
 
   return (
     <>
-      <style>{`
+      <style suppressHydrationWarning>{`
         @keyframes menuSlide {
           from { opacity:0; transform:translateY(-10px); }
           to   { opacity:1; transform:translateY(0); }
@@ -84,7 +83,6 @@ export default function Navbar() {
           animation:navGlow 5s ease-in-out infinite;
         }
 
-        /* ── Logo ── */
         .n-logo {
           display:flex; align-items:center; gap:10px;
           text-decoration:none; flex-shrink:0;
@@ -104,7 +102,6 @@ export default function Navbar() {
           box-shadow:0 0 20px rgba(249,115,22,.5), 0 0 0 3px rgba(249,115,22,.3);
         }
 
-        /* الحلقة الدائرية المتحركة */
         .n-logo-ring {
           position:absolute; inset:-4px;
           border-radius:50%;
@@ -124,7 +121,6 @@ export default function Navbar() {
           -webkit-background-clip:text; -webkit-text-fill-color:transparent;
         }
 
-        /* ── Desktop links ── */
         .n-links-wrap { position:relative; display:flex; align-items:center; gap:1.75rem; }
 
         .n-indicator {
@@ -174,7 +170,6 @@ export default function Navbar() {
           transition:all .3s cubic-bezier(.34,1.56,.64,1);
         }
 
-        /* ── Mobile menu ── */
         .n-mobile {
           position:fixed; top:68px; left:0; right:0; z-index:99;
           background:rgba(7,7,15,.97);
@@ -208,7 +203,6 @@ export default function Navbar() {
 
       <nav className={`n-nav${scrolled ? ' scrolled' : ''}`}>
 
-        {/* ── Logo ── */}
         <Link href="#home" className="n-logo">
           <div className="n-logo-icon">
             <div className="n-logo-ring" />
@@ -219,7 +213,6 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* ── Desktop links ── */}
         <div ref={navRef} className="n-links-wrap">
           <span ref={indicatorRef} className="n-indicator" />
           {NAV_ITEMS.map(item => (
@@ -236,7 +229,6 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* ── Hamburger ── */}
         <button className="n-hamburger" onClick={() => setIsOpen(v => !v)} aria-label="menu">
           <span className="n-ham-line" style={{ transform: isOpen ? 'rotate(45deg) translate(4px,4.5px)' : 'none' }} />
           <span className="n-ham-line" style={{ opacity: isOpen ? 0 : 1, width: isOpen ? 0 : 16 }} />
@@ -244,7 +236,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* ── Mobile menu ── */}
       {isOpen && (
         <div className="n-mobile">
           {NAV_ITEMS.map(item => (
