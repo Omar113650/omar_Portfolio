@@ -1,12 +1,16 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Sora } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const sora = Sora({ subsets: ['latin'], weight: ['400', '600', '700', '800'] })
 
 export const metadata: Metadata = {
   title: 'Omar Elhelaly - Backend Developer',
   description: 'Building Powerful Backend Systems That Scale. Node.js, NestJS, and modern system architecture.',
+  icons: {
+    icon: '/omar-profile.jpg',
+    apple: '/omar-profile.jpg',
+  },
 }
 
 export default function RootLayout({
@@ -16,8 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="icon" href="/omar-profile.jpg" type="image/jpeg" />
+      </head>
+      <body className={sora.className} style={{ background: '#07070F', margin: 0, padding: 0 }}>
+        {children}
+      </body>
     </html>
   )
 }
-

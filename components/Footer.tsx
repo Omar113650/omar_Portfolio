@@ -1,42 +1,92 @@
-'use client'
+'use client';
 
-import { Mail, Github } from 'lucide-react'
-import Link from 'next/link'
+import { Mail, Github } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="py-12 px-4 border-t border-purple/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold mb-2">Omar Elhelaly</h3>
-            <p className="text-gray-400">Backend Developer | Node.js & NestJS</p>
-            <p className="text-gray-400">Mansoura, Egypt</p>
-          </div>
-          
-          <div className="flex gap-4">
-            <a
-              href="mailto:omarelhelaly520@gmail.com"
-              className="p-3 bg-purple/10 border border-purple/30 rounded-lg hover:bg-orange/10 hover:border-orange transition-all"
-            >
-              <Mail className="w-5 h-5 text-gray-300" />
-            </a>
-            <a
-              href="https://github.com/Omar113650"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-purple/10 border border-purple/30 rounded-lg hover:bg-orange/10 hover:border-orange transition-all"
-            >
-              <Github className="w-5 h-5 text-gray-300" />
-            </a>
-          </div>
-        </div>
-        
-        <div className="mt-8 pt-8 border-t border-purple/30 text-center text-gray-400">
-          <p>&copy; 2026 Omar Elhelaly. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  )
-}
+    <>
+      <style>{`
+        @keyframes fOrbF {
+          0%,100% { transform: translateX(-50%) translateY(0); }
+          50%      { transform: translateX(-50%) translateY(-14px); }
+        }
 
+        .f-icon-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          height: 44px;
+          border-radius: 10px;
+          background: rgba(139,92,246,.07);
+          border: 1px solid rgba(139,92,246,.25);
+          color: #6B6480;
+          text-decoration: none;
+          transition: all .3s cubic-bezier(.34,1.56,.64,1);
+        }
+        .f-icon-btn:hover {
+          background: rgba(249,115,22,.1);
+          border-color: rgba(249,115,22,.45);
+          color: #F97316;
+          transform: translateY(-3px) scale(1.08);
+          box-shadow: 0 8px 24px rgba(249,115,22,.2);
+        }
+      `}</style>
+
+      <footer
+        style={{
+          background: '#07070F',
+          borderTop: '1px solid rgba(139,92,246,.2)',
+          padding: '3.5rem 1.5rem 2rem',
+          position: 'relative',
+          overflow: 'hidden',
+          fontFamily: "'Sora', sans-serif",
+        }}
+      >
+        {/* subtle top orb */}
+        <div style={{ position: 'absolute', top: -60, left: '50%', width: 400, height: 200, background: 'radial-gradient(ellipse, rgba(139,92,246,.06), transparent 70%)', borderRadius: '50%', pointerEvents: 'none', animation: 'fOrbF 10s ease-in-out infinite' }} />
+
+        <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative', zIndex: 1 }}>
+
+          {/* Main row */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem', marginBottom: '2.5rem' }}>
+
+            {/* Identity */}
+            <div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#EAE6DE', marginBottom: '.35rem', letterSpacing: '-.5px' }}>
+                Omar{' '}
+                <span style={{ background: 'linear-gradient(135deg, #9333EA, #F97316)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  Elhelaly
+                </span>
+              </h3>
+              <p style={{ fontSize: '.82rem', color: '#6B6480', marginBottom: '.2rem' }}>
+                Backend Developer · Node.js &amp; NestJS
+              </p>
+              <p style={{ fontSize: '.82rem', color: '#3A3550' }}>
+                Mansoura, Egypt
+              </p>
+            </div>
+
+            {/* Icons */}
+            <div style={{ display: 'flex', gap: '.625rem' }}>
+              <a href="mailto:omarelhelaly520@gmail.com" className="f-icon-btn" aria-label="Email">
+                <Mail size={18} />
+              </a>
+              <a href="https://github.com/Omar113650" target="_blank" rel="noopener noreferrer" className="f-icon-btn" aria-label="GitHub">
+                <Github size={18} />
+              </a>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, rgba(139,92,246,.2), transparent)', marginBottom: '1.5rem' }} />
+
+          {/* Copyright */}
+          <p style={{ textAlign: 'center', fontSize: '.75rem', color: '#2E2B40', letterSpacing: '.5px' }}>
+            © 2026 Omar Elhelaly. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </>
+  );
+}
