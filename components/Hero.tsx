@@ -294,7 +294,7 @@ export default function Hero() {
             {/* location — مسافة أقل تحت الاسم */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#3A3550', fontSize: '.82rem', marginBottom: '1.25rem' }}>
               <MapPin size={14} style={{ color: '#F97316', flexShrink: 0 }} />
-              Mansoura, Egypt
+               Egypt
             </div>
 
             {/* Contact links — gap أقل بين العناصر */}
@@ -334,3 +334,5 @@ export default function Hero() {
     </>
   );
 }
+
+
