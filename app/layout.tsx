@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Sora } from 'next/font/google'
 import './globals.css'
+import PageShell from './PageShell'
 
 const sora = Sora({ subsets: ['latin'], weight: ['400', '600', '700', '800'] })
 
@@ -24,8 +25,42 @@ export default function RootLayout({
         <link rel="icon" href="/omar-profile.jpg" type="image/jpeg" />
       </head>
       <body className={sora.className} style={{ background: '#07070F', margin: 0, padding: 0 }}>
-        {children}
+        <PageShell>{children}</PageShell>
       </body>
     </html>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

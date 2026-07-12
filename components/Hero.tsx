@@ -134,7 +134,9 @@ export default function Hero() {
 
   return (
     <>
-      <style>{`
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         @keyframes hPulse {
           0%,100% { opacity:.25; transform:scale(1); }
           50%      { opacity:.45; transform:scale(1.08); }
@@ -220,7 +222,9 @@ export default function Hero() {
         .h-avatar-ring {
           animation:ringPulse 3s ease-in-out infinite;
         }
-      `}</style>
+      `,
+        }}
+      />
 
       <section
         id="home"
@@ -334,5 +338,3 @@ export default function Hero() {
     </>
   );
 }
-
-

@@ -7,6 +7,8 @@ import Stats from '@/components/Stats'
 import Services from '@/components/Services'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+// import Splash from '@/components/Splashscreen'
+
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
       <Services />
       <Contact />
       <Footer />
+   
+
     </main>
   )
 }
