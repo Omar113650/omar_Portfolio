@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import { FolderOpen, Layers, Cloud, Github, Plug } from 'lucide-react';
 
 const STATS = [
-  { Icon: FolderOpen, value: 18,  suffix: '+', label: 'Completed Projects',    color: '#F97316' },
-  { Icon: Layers,     value: 6,   suffix: '+', label: 'Large-Scale Platforms', color: '#9333EA' },
+  { Icon: FolderOpen, value: 10,  suffix: '+', label: 'Completed Projects',    color: '#F97316' },
+  { Icon: Layers,     value: 3,   suffix: '+', label: 'Large-Scale Platforms', color: '#9333EA' },
   { Icon: Cloud,      value: 3,   suffix: '+', label: 'SaaS Systems',          color: '#60A5FA' },
-  { Icon: Github,     value: 155, suffix: '+', label: 'GitHub Contributions',  color: '#4ADE80' },
+  { Icon: Github,     value: 48,  suffix: '+', label: 'GitHub Contributions',  color: '#4ADE80' },
   { Icon: Plug,       value: 10,  suffix: '+', label: 'External Integrations', color: '#FACC15' },
 ];
 
@@ -193,4 +193,6 @@ export default function Stats() {
     </>
   );
 }
+
+
 
